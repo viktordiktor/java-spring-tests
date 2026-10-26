@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org",
+  "title": "IngredientsArraySchema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "unit", "onHand", "minLevel", "supplier"],
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "unit": {
+        "type": "string"
+      },
+      "onHand": {
+        "type": "integer"
+      },
+      "minLevel": {
+        "type": "integer"
+      },
+      "supplier": {
+        "type": "object",
+        "required": ["code", "channel", "leadTimeDays"],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string",
+            "enum": ["SOAP", "GRPC", "REST"]
+          },
+          "leadTimeDays": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

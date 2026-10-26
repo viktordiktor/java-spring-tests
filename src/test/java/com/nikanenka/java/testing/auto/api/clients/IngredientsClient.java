@@ -1,0 +1,18 @@
+package com.nikanenka.java.testing.auto.api.clients;
+
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+@ApiClient
+public class IngredientsClient extends BaseClient {
+
+    private static final String INGREDIENTS_URL = "/ingredients";
+
+    public Response getIngredients() {
+        return given()
+                .spec(tokenSpecManager.getAuthenticatedSpec())
+                .when()
+                .get(INGREDIENTS_URL);
+    }
+}
