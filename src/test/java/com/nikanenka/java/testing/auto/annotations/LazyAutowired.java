@@ -1,4 +1,4 @@
-package com.nikanenka.java.testing.auto.api.utils;
+package com.nikanenka.java.testing.auto.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

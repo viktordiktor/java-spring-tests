@@ -1,7 +1,7 @@
 package com.nikanenka.java.testing.auto.api.clients;
 
-import com.nikanenka.java.testing.auto.api.utils.LazyAutowired;
-import com.nikanenka.java.testing.auto.api.utils.TokenSpecManager;
+import com.nikanenka.java.testing.auto.annotations.LazyAutowired;
+import com.nikanenka.java.testing.auto.utils.TokenSpecManager;
 
 public abstract class BaseClient {
 

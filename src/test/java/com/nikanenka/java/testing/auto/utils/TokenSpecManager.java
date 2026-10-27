@@ -1,4 +1,4 @@
-package com.nikanenka.java.testing.auto.api.utils;
+package com.nikanenka.java.testing.auto.utils;
 
 import com.nikanenka.java.testing.auto.api.dto.TokenRequest;
 import com.nikanenka.java.testing.auto.api.dto.TokenResponse;
@@ -7,7 +7,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -16,10 +16,11 @@ import static io.restassured.RestAssured.given;
 
 @Component
 @RequiredArgsConstructor
-@Log4j2
+@Slf4j
 public class TokenSpecManager {
 
     private final ApiProperties apiProperties;
+    private final CredentialProperties credentialProperties;
 
     private String cachedToken;
     private Instant tokenExpirationTime;
@@ -51,8 +52,8 @@ public class TokenSpecManager {
                 .baseUri(apiProperties.getBaseUri())
                 .contentType(ContentType.JSON)
                 .body(TokenRequest.builder()
-                        .username(apiProperties.getUsername())
-                        .password(apiProperties.getPassword())
+                        .username(credentialProperties.getUsername())
+                        .password(credentialProperties.getPassword())
                         .build())
                 .when()
                 .post(apiProperties.getLoginPath())
