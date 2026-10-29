@@ -16,4 +16,11 @@ public class IngredientsClient extends BaseClient {
                 .when()
                 .get(INGREDIENTS_URL);
     }
+
+    public Response getIngredientsWithoutToken() {
+        return given()
+                .baseUri(apiProperties.getBaseUri())
+                .when()
+                .get(INGREDIENTS_URL);
+    }
 }

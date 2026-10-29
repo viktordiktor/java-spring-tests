@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org",
+  "title": "OrdersPageSchema",
+  "type": "object",
+  "required": [
+    "content",
+    "pageable",
+    "sort",
+    "totalElements",
+    "totalPages",
+    "size",
+    "number",
+    "numberOfElements",
+    "first",
+    "last",
+    "empty"
+  ],
+  "properties": {
+    "content": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "recipe", "qty", "totalPrice", "placedAt"],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["PENDING", "PAID", "PREPARING", "DONE", "CANCELLED"]
+          },
+          "recipe": {
+            "type": "object",
+            "required": ["id", "name", "size", "price"],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "size": {
+                "type": "string",
+                "enum": ["SMALL", "MEDIUM", "LARGE"]
+              },
+              "price": {
+                "type": "number"
+              }
+            }
+          },
+          "qty": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "totalPrice": {
+            "type": "number",
+            "minimum": 0
+          },
+          "placedAt": {
+            "type": "string"
+          },
+          "etaAt": {
+            "type": ["string", "null"]
+          },
+          "payment": {
+            "type": ["object", "null"],
+            "required": ["method", "amount", "txnId", "status"],
+            "properties": {
+              "method": {
+                "type": "string",
+                "enum": ["CARD", "CASH"]
+              },
+              "amount": {
+                "type": "number"
+              },
+              "txnId": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["PENDING", "SUCCEEDED", "FAILED"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "pageable": {
+      "type": "object",
+      "required": ["pageNumber", "pageSize", "offset", "paged", "unpaged"],
+      "properties": {
+        "pageNumber": {
+          "type": "integer"
+        },
+        "pageSize": {
+          "type": "integer"
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "paged": {
+          "type": "boolean"
+        },
+        "unpaged": {
+          "type": "boolean"
+        },
+        "sort": {
+          "$ref": "#/definitions/sortObject"
+        }
+      }
+    },
+    "sort": {
+      "$ref": "#/definitions/sortObject"
+    },
+    "totalElements": {
+      "type": "integer"
+    },
+    "totalPages": {
+      "type": "integer"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "numberOfElements": {
+      "type": "integer"
+    },
+    "first": {
+      "type": "boolean"
+    },
+    "last": {
+      "type": "boolean"
+    },
+    "empty": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "sortObject": {
+      "type": "object",
+      "required": ["empty", "sorted", "unsorted"],
+      "properties": {
+        "empty": {
+          "type": "boolean"
+        },
+        "sorted": {
+          "type": "boolean"
+        },
+        "unsorted": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

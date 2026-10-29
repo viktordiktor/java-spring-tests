@@ -15,7 +15,7 @@ public class ConsoleLogger implements LogEventListener {
 
     @Override
     public void afterEvent(LogEvent currentLogEvent) {
-        log.info("[SELENIDE DONE] Action: {} | Time spent: {}ms",
+        log.info("[SELENIDE DONE] Status: {} | Time spent: {}ms",
                 currentLogEvent.getStatus(),
                 currentLogEvent.getDuration());
     }
