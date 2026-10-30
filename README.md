@@ -149,4 +149,4 @@ from `selenide.baseUrl`.
 (which already provides `tokenSpecManager` and `apiProperties`); a test extends
 `BaseApiTest` and is marked with `@Test(groups = "api")`.
 
-![Dog]([[https://media.giphy.com/media/3o7abKhOpu0NwenH5O/giphy.gif](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHgzbjBmeTZ0ZjQ3MTFxdmJ0YWFnM3ZyN2c3MXdrbzZjaGltNGY1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/baNxGhmywafa3h7gPr/giphy.gif](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9xbHk3MmFuOXExOXBhbHo4eW45NjZpMzU4ZGR0a3RydjAzNTVobyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/baNxGhmywafa3h7gPr/giphy.gif)))
+![Doggy](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG9xbHk3MmFuOXExOXBhbHo4eW45NjZpMzU4ZGR0a3RydjAzNTVobyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/baNxGhmywafa3h7gPr/giphy.gif)
