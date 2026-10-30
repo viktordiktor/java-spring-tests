@@ -148,3 +148,5 @@ from `selenide.baseUrl`.
 **API:** a client is a Spring bean annotated with `@ApiClient` and extending `BaseClient`
 (which already provides `tokenSpecManager` and `apiProperties`); a test extends
 `BaseApiTest` and is marked with `@Test(groups = "api")`.
+
+![Dog](https://media.giphy.com/media/3o7abKhOpu0NwenH5O/giphy.gif)
